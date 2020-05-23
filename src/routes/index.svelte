@@ -20,13 +20,19 @@
         color: rgb(110, 120, 152);
         font-size: 24px;
         font-weight: normal;
-        letter-spacing: -0.2px;
+        /*letter-spacing: -0.2px;*/
         line-height: 32px;
+    }
+
+    figcaption {
+        color: rgb(110, 120, 152);
+        font-size: 12px;
     }
 
     #left {
         box-shadow: 2px 20px 50px 0 rgba(0,0,0,.07);
         border-radius: 18px;
+        min-width: 363px;
     }
     
     #right {
@@ -39,15 +45,18 @@
 		display: initial;
     }
 
-    p highlight {
+    .gradient {
         font-weight: 500;
-        background: rgba(0, 0, 0, 0) linear-gradient(103.97deg, rgb(249, 142, 0) -2.95%, rgb(255, 188, 0) 100%) repeat scroll 0% 0% padding-box text;
-        -webkit-text-fill-color: transparent;
+        background: linear-gradient(153deg,#f98e00,#ffbc00);
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline-block;
     }
 
     .spin {
 		width: 300px;
-		height: 300px;
+        height: 300px;
+        /*margin-top: -93px;*/
 	    -webkit-filter: grayscale(0);
 	    filter: grayscale(0) blur(0);
 	    -webkit-transition: .3s ease-in-out;
@@ -108,7 +117,7 @@
 		<div class="col-3-auto d-flex flex-column justify-content-center m-3 p-2 bg-white" id="left">
 		    <figure class="flex-row col flex-grow-0 align-content-center p-2" on:mouseenter={waiting} on:touchstart={waiting} on:mouseleave={async () => {await fetchPrice();}} on:touchend={async () => {await fetchPrice();}}>
 		    	<img class="spin" alt='Bitcoin Club' src='bitcoin_shine.gif'/>
-                <figcaption>Hover/Click over the image for an update.</figcaption>
+                <figcaption>Hover or click over the image to update.</figcaption>
 		    </figure>
 		    	<h3 class="flex-row col flex-grow-0 align-content-center p-2">Price: {currentRate}</h3>
 		    	<h3 class="flex-row col flex-grow-0 align-content-center p-2 ">Volume(24Hr): {volumeUSD}</h3>
@@ -120,11 +129,7 @@
             <h1 class="flex-row col flex-grow-0 align-content-center py-5">
 		        Bitcoin Club at KSU
             </h1>
-		    <p class="flex-row p-2 flex-grow-0 align-items-center text-center">We strive to promote currently emerging innovations related to the digital economy. The mindset of this organization as a whole is to gain knowledge and help build skillset to appreciate the digital economy technologies. We wish to share and promote digital economy solutions through collaborative and peer learning efforts. The mission of this organization is to help students understand and develop an appreciation for
-            <highlight>cryptocurrencies, cryptography, security, privacy,</highlight>  and  <highlight>the digital economy.</highlight>
-            <br><br>
-            <Icon data={faCog} spin/>
-            <small>We are currently working on updating the website meanwhile check out the About section!</small></p>
+		    <p class="flex-row p-2 flex-grow-0 align-items-center text-center">We strive to promote currently emerging innovations related to the digital economy. The mindset of this organization as a whole is to gain knowledge and help build skillset to appreciate the digital economy technologies. We wish to share and promote digital economy solutions through collaborative and peer learning efforts. The mission of this organization is to help students understand and develop an appreciation for <span class="gradient">cryptocurrencies, cryptography, security, privacy,</span> and <span class="gradient">the digital economy.</span></p><p class="p-2 flex-row align-items-center"><Icon data={faCog} spin/><small>&nbsp; We are currently working on updating the website meanwhile check out the About section!</small></p>
 		</div>
     </div>
 </div>
