@@ -1,10 +1,10 @@
 const ghpages = require('gh-pages');
 
 ghpages.publish(
-    '__sapper__/export/BitcoinClub',
+    '__sapper__/export',
     {
-        branch: 'gh-pages',
-        repo: 'git@github.com:bitcoinclubatksu/BitcoinClub.git',
+        branch: 'master',
+        repo: 'git@github.com:bitcoinclubatksu/bitcoinclubatksu.github.io.git',
         user: {
             name: 'Harshit Joshi',
             email: 'hjoshi023@gmail.com'

@@ -14,8 +14,8 @@
     .gradient {
         min-height: 78vh;
 		background-color: #ffe36d;
-		# work-around https://github.com/sveltejs/sapper/issues/887
-		background-image: url('/BitcoinClub/circuit-board.svg');
+		/* work-around https://github.com/sveltejs/sapper/issues/887 */
+		background-image: url('/circuit-board.svg');
     }
 
 </style>
