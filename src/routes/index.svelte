@@ -32,7 +32,6 @@
     #left {
         box-shadow: 2px 20px 50px 0 rgba(0,0,0,.07);
         border-radius: 18px;
-        min-width: 363px;
     }
     
     #right {
@@ -42,7 +41,14 @@
 
     #change {
         color: var(--color);
-		display: initial;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: inline-block;
     }
 
     .gradient {
@@ -56,17 +62,51 @@
     .spin {
 		width: 300px;
         height: 300px;
-        /*margin-top: -93px;*/
 	    -webkit-filter: grayscale(0);
 	    filter: grayscale(0) blur(0);
 	    -webkit-transition: .3s ease-in-out;
 	    transition: .3s ease-in-out;
     }
 
-    .spin:hover {
-    	-webkit-filter: grayscale(100%) blur(2px);
-    	filter: grayscale(100%) blur(2px);
+    @media only screen and (min-width: 1200px) {
+        #left {
+            min-width: 363px;
+        }
     }
+
+    @media only screen and (min-width: 768px) {
+        .spin:hover {
+        	-webkit-filter: grayscale(100%) blur(2px);
+        	filter: grayscale(100%) blur(2px);
+        }
+    }
+
+    .loader {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+    }
+
+    .loader:after {
+        content: " ";
+        display: block;
+        width: 25px;
+        height: 25px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 2px solid #f98e00;
+        border-color: #f98e00 transparent #f98e00 transparent;
+        animation: loader 1.2s linear infinite;
+    }
+    @keyframes loader {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
 
 </style>
 
@@ -78,11 +118,11 @@
     import Icon from 'svelte-awesome';
     import { faCog } from '@fortawesome/free-solid-svg-icons';
 
-    let volumeUSD = "...waiting",
-	 changePercent24 = "...waiting",
-	 currentRate = "...waiting",
-	 isPositiveChange;
-
+    let volumeUSD = "",
+	 changePercent24 = "",
+	 currentRate = "",
+    isPositiveChange;
+    
     async function fetchPrice() {
 		let data = await getBTCPrice();
 		volumeUSD = numeral(data.volumeUsd24Hr).format('($0.00a)');
@@ -92,9 +132,9 @@
     }
 
     function waiting() {
-        volumeUSD = "...waiting";
-	    changePercent24 = "...waiting";
-	    currentRate = "...waiting";
+        volumeUSD = "";
+	    changePercent24 = "";
+	    currentRate = "";
     }
     
     onMount(async () => {
@@ -114,14 +154,14 @@
 <div class="container m-3">
     <div class="row justify-content-center">
        
-		<div class="col-3-auto d-flex flex-column justify-content-center m-3 p-2 bg-white" id="left">
+		<div class="col-3-auto d-flex flex-column align-items-start m-3 p-2 bg-white" id="left">
 		    <figure class="flex-row col flex-grow-0 align-content-center p-2" on:mouseenter={waiting} on:touchstart={waiting} on:mouseleave={async () => {await fetchPrice();}} on:touchend={async () => {await fetchPrice();}}>
 		    	<img class="spin" alt='Bitcoin Club' src='bitcoin_shine.gif'/>
                 <figcaption>Hover or click over the image to update.</figcaption>
 		    </figure>
-		    	<h3 class="flex-row col flex-grow-0 align-content-center p-2">Price: {currentRate}</h3>
-		    	<h3 class="flex-row col flex-grow-0 align-content-center p-2 ">Volume(24Hr): {volumeUSD}</h3>
-		    	<h3 class="flex-row col flex-grow-0 align-content-center p-2 ">Change(24Hr): <div id="change" use:cssVars="{percentChange}">{changePercent24}%</div></h3>
+            <h3 class="flex-row col flex-grow-0 align-content-center p-2">Price: <span   class="{currentRate === '' ? 'loader' : ''}">{currentRate}</span></h3>
+            <h3 class="flex-row col flex-grow-0 align-content-center p-2 ">Volume(24Hr): <span class="{volumeUSD === '' ? 'loader' : ''}">{volumeUSD}</span></h3>
+            <h3 class="flex-row col flex-grow-0 align-content-center p-2 ">Change(24Hr): <span class="{changePercent24 === '' ? 'loader' : ''}"><span id="change" use:cssVars="{percentChange}">{changePercent24}</span><span id="change" use:cssVars="{percentChange}" class="{changePercent24 === '' ? 'hide' : 'show'}">%</span></span></h3>
     	</div>
         
         
