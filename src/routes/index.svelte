@@ -98,6 +98,7 @@
         border-color: #f98e00 transparent #f98e00 transparent;
         animation: loader 1.2s linear infinite;
     }
+
     @keyframes loader {
         0% {
             transform: rotate(0deg);
@@ -107,10 +108,10 @@
         }
     }
 
-
 </style>
 
 <script>
+
     import { onMount } from 'svelte';
 	import numeral from 'numeral';
 	import cssVars from 'svelte-css-vars';
