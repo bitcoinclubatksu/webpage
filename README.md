@@ -17,7 +17,7 @@ Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started.
 
 ## Bugs and feedback
 
-If you encounter any issues while browsing or running the code. Please create an issue over at [Bitcoin Club at KSU webpage source issue tracker](https://github.com/bitcoinclubatksu/webpage/issues) with an appropriate tag.
+If you encounter any issues while browsing or running the code. Please create an issue over at [Bitcoin Club at KSU webpage issue tracker](https://github.com/bitcoinclubatksu/webpage/issues) with an appropriate tag.
 Also, sapper is in early development, and may have the odd rough edge here and there. Please be vocal over on the [Sapper issue tracker](https://github.com/sveltejs/sapper/issues) if you face a framework related issue.
 
 
