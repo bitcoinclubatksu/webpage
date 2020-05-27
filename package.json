@@ -1,7 +1,7 @@
 {
-  "name": "Bitcoin_Club_at_Club",
+  "name": "Bitcoin_Club_at_KSU",
   "description": "Bitcoin Club at KSU organization webpage",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
@@ -12,6 +12,24 @@
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run"
   },
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com:bitcoinclubatksu/webpage.git"
+  },
+  "author": "Harshit Joshi",
+  "license": "MIT",
+  "bugs": {
+      "url": "https://github.com/bitcoinclubatksu/webpage/issues"
+  },
+  "keywords": [
+    "club",
+    "bitcoin",
+    "KSU",
+    "bitcoin",
+    "student",
+    "organization",
+    "Kennesaw State University"
+  ],
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
