@@ -14,12 +14,34 @@ Open up [localhost:3000](http://localhost:3000) and start clicking around.
 
 Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started.
 
+### Running tests
+
+You can run end-to-end tests via:
+
+# Console:
+
+```bash
+cd webpage
+npm install
+npm run dev
+npm run cy:run
+```
+
+# For an interative e2e session:
+
+```bash
+cd webpage
+npm install
+npm run dev
+npm run cy:open
+```
+
+I've used [Cypress](https://www.cypress.io) to write end-to-end tests. Please check out their documentation(https://docs.cypress.io) for more references.
 
 ## Bugs and feedback
 
 If you encounter any issues while browsing or running the code. Please create an issue over at [Bitcoin Club at KSU webpage issue tracker](https://github.com/bitcoinclubatksu/webpage/issues) with an appropriate tag.
 Also, sapper is in early development, and may have the odd rough edge here and there. Please be vocal over on the [Sapper issue tracker](https://github.com/sveltejs/sapper/issues) if you face a framework related issue.
-
 
 ## Final words
 
