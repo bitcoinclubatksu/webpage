@@ -112,7 +112,7 @@ describe('Bitcoin Club at KSU webpage', () => {
 		});
 	});
 
-	describe.only('footer', function() {
+	describe('footer', function() {
 		it('should redirect to correct organization page', () => {
 			cy.get('footer div p a')
 				.eq(0)
