@@ -1,6 +1,6 @@
 This repository contains the current source code for [Bitcoin Club at KSU's official webpage](https://bitcoinclubatksu.github.io).
 
-### Running the project locally
+## Running the project locally
 
 If you wish to utilize this code for development, you can install dependencies and run the project in development mode with:
 
@@ -14,11 +14,11 @@ Open up [localhost:3000](http://localhost:3000) and start clicking around.
 
 Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started.
 
-### Running tests
+## Running tests
 
 You can run end-to-end tests via:
 
-# Console:
+### Console:
 
 ```bash
 cd webpage
@@ -27,7 +27,7 @@ npm run dev
 npm run cy:run
 ```
 
-# For an interative e2e session:
+### Interative e2e testing session:
 
 ```bash
 cd webpage
