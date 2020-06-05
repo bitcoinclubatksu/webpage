@@ -1,7 +1,5 @@
 This repository contains the current source code for [Bitcoin Club at KSU's official webpage](https://bitcoinclubatksu.github.io).
 
-[![Build Status](https://travis-ci.org/bitcoinclubatksu/webpage.svg?branch=master)](https://travis-ci.org/bitcoinclubatksu/webpage)
-
 ## Running the project locally
 
 If you wish to utilize this code for development, you can install dependencies and run the project in development mode with:
